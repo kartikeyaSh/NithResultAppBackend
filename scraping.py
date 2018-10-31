@@ -6,6 +6,8 @@ import MySQLdb
 conn = MySQLdb.connect("localhost","root","justgoogleit","results" )
 cursor = conn.cursor()
 arr = [17,13,9,5]
+
+
 def push_students(rollno,name,cgpi):
 	try:
 	    cursor.execute('''UPDATE students SET cgpi=%s where roll_no=%s''',(cgpi, rollno))
@@ -14,18 +16,23 @@ def push_students(rollno,name,cgpi):
 	except:
 	    print conn.rollback()
 	    print ("MKK")
+
+
 def push_semester(rollno,semester,sgpi,cgpi):
 	try:
 	    cursor.execute('''INSERT into semesters (roll_no,sgpi,cgpi,semester_no) values (%s,%s,%s,%s)''',(rollno,sgpi,cgpi,semester))
 	    conn.commit()
 	except:
 	    print conn.rollback()
+
+
 def push_subjects(id1,rollno,semester,subname,obtainCR,totalCR):
 	try:
 	    cursor.execute('''INSERT into subjects (id,roll_no,semester_no,subject_name,obtainCR,TotalCR) values (%s,%s,%s,%s,%s,%s)''',(id1,rollno,semester,subname,obtainCR,totalCR))
 	    conn.commit()
 	except:
 	    print conn.rollback()
+
 
 def btech():
 	roll_2="1"
@@ -88,6 +95,7 @@ def btech():
 				roll_2 = roll3
 			roll_2 = roll2
 		roll_2 = "1"
+
 def dual():
 	roll_2="1"
 	site = "1"
@@ -152,6 +160,8 @@ def dual():
 			roll_2 = roll2
 		roll_2 = "1"
 		site = "1"
+
+
 def iiit():
 	roll_2="IIITU1"
 	site = "iiituna1"
@@ -215,6 +225,8 @@ def iiit():
 			roll_2 = roll2
 		roll_2 = "IIITU1"
 		site = "iiituna1"
+
+
 def mtech():
 	roll_2="1"
 	site = "1"
@@ -278,6 +290,7 @@ def mtech():
 			roll_2 = roll2
 		roll_2 = "1"
 		site = "1"
+
 
 if __name__ == '__main__':
         btech()
