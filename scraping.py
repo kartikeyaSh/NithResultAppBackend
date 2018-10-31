@@ -47,8 +47,11 @@ def btech():
 			for roll_no in range(99):
 				if roll_no<9:
 					roll_2 = roll_2 + "0" + str(roll_no+1)
-				else:
+				elif roll_no<99:
 					roll_2 = roll_2 + str(roll_no+1)
+                                else:
+                                        roll_2 = roll_2 + "00" + str(roll_no+1)
+
 				print roll_2 + " Site "+ roll2
 				form_data={
 					'RollNumber' : roll_2
