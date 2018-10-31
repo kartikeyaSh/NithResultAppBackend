@@ -1,3 +1,5 @@
+#!/usr/bin/python
+
 from bs4 import BeautifulSoup
 import requests
 import MySQLdb
@@ -276,8 +278,9 @@ def mtech():
 			roll_2 = roll2
 		roll_2 = "1"
 		site = "1"
-btech()
-dual()
-iiit()
-mtech()
-			
+
+if __name__ == '__main__':
+        btech()
+        dual()
+        iiit()
+        mtech()
